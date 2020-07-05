@@ -6,7 +6,16 @@ spring:
         username: root
         password: 1234
         driver-class-name: com.mysql.jdbc.Driver
+    redis:
+        database: 0
+        host: 121.41.91.101
+        port: 6379
+        password:
+        timeout: 0
+
+
 mybatis:
     mapper-locations: classpath:mapper/*Mapper.xml
     type-aliases-package: com.pkm.pkmdb.object
+
 

@@ -1,6 +1,6 @@
 package com.pkm.pkmdb.controller;
 
-import com.pkm.pkmdb.domain.Res;
+import com.pkm.pkmdb.vo.Res;
 import com.pkm.pkmdb.object.Ball;
 import com.pkm.pkmdb.object.BallBag;
 import com.pkm.pkmdb.object.Ball_pack;

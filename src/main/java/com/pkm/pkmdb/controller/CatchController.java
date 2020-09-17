@@ -1,6 +1,6 @@
 package com.pkm.pkmdb.controller;
 
-import com.pkm.pkmdb.domain.Res;
+import com.pkm.pkmdb.vo.Res;
 import com.pkm.pkmdb.object.*;
 import com.pkm.pkmdb.service.BallService;
 import com.pkm.pkmdb.service.Ball_packService;

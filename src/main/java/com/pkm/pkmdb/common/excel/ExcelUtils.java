@@ -1,17 +1,12 @@
 package com.pkm.pkmdb.common.excel;
 
-import com.zongs.commons.exception.BusinessException;
-import com.zongs.commons.utils.DateUtil;
+import com.pkm.pkmdb.common.DateUtil;
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.http.client.utils.DateUtils;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.util.ObjectUtils;
 
@@ -448,7 +443,7 @@ public class ExcelUtils {
                 // 如果是日期类型进行转换
                 if (rtn != null) {
                     if (rtn instanceof Date) {
-                        value = DateUtils.formatDate((Date) rtn, "yyyy-MM-dd");
+                        value = DateUtil.format((Date) rtn, "yyyy-MM-dd");
                     } else if (rtn instanceof BigDecimal) {
                         NumberFormat nf = new DecimalFormat("#,##0.00");
                         value = nf.format(rtn);
@@ -467,7 +462,7 @@ public class ExcelUtils {
     /**
      * 公共导出方法 单个
      */
-    public <T> void commonExport(String sheetName, Class clazz, Map<String, String> beanMap, List<T> dataList, HttpServletResponse response) throws BusinessException {
+    public <T> void commonExport(String sheetName, Class clazz, Map<String, String> beanMap, List<T> dataList, HttpServletResponse response) throws Exception {
 
         try {
             //创建工作簿
@@ -480,7 +475,7 @@ public class ExcelUtils {
             writeWorkBook(workbook, response);
 
         } catch (Exception e) {
-            throw new BusinessException(e.getMessage(),e);
+            throw new Exception(e.getMessage(),e);
         }
     }
 
@@ -488,7 +483,7 @@ public class ExcelUtils {
      * 公共导出方法 多个
      */
     public <T> void commonExportPlus(String sheetName, Class clazz, Map<String, String> beanMap, Object obj,
-                                     Class clazzPlus, Map<String, String> beanMapPlus, List<T> dataListPlus, HttpServletResponse response) throws BusinessException {
+                                     Class clazzPlus, Map<String, String> beanMapPlus, List<T> dataListPlus, HttpServletResponse response) throws Exception {
 
         try {
             //创建工作簿
@@ -507,7 +502,7 @@ public class ExcelUtils {
             //写入文件
             writeWorkBook(workbook, response);
         } catch (Exception e) {
-            throw new BusinessException(e.getMessage(),e);
+            throw new Exception(e.getMessage(),e);
         }
     }
 

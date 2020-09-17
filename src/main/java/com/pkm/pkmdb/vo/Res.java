@@ -1,4 +1,4 @@
-package com.pkm.pkmdb.domain;
+package com.pkm.pkmdb.vo;
 
 public class Res {
     public static int SUCCESS = 200;

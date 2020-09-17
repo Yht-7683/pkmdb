@@ -1,12 +1,9 @@
 package com.pkm.pkmdb.controller;
 
-import com.pkm.pkmdb.domain.Res;
+import com.pkm.pkmdb.vo.Res;
 import com.pkm.pkmdb.object.Pokemon;
-import com.pkm.pkmdb.object.User;
 import com.pkm.pkmdb.service.PokemonService;
-import com.pkm.pkmdb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

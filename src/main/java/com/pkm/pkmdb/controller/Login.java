@@ -2,7 +2,7 @@ package com.pkm.pkmdb.controller;
 
 
 
-import com.pkm.pkmdb.domain.Res;
+import com.pkm.pkmdb.vo.Res;
 import com.pkm.pkmdb.object.User;
 import com.pkm.pkmdb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
